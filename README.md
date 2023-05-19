@@ -6,7 +6,7 @@ PyScrap is a tool that helps you find all email addresses and phone numbers publ
 
 ## Installation
 
-```
+```bash
 $ git clone https://github.com/vev0s/PyScrap.git
 $ cd pyscrap
 $ python setup.py install
@@ -17,7 +17,7 @@ $ python pyscrap.py
 
 ## Usage
 
-```
+```bash
 $ python pyscrap.py -e -l https://www.yahoo.com/
 ```
 
