@@ -6,13 +6,14 @@
 # @author : Paul Lecomte (vev0s)
 
 import sys
-# pyscrap.lib
-from core.parser import parser
-from core.output import *
-from core.Banner import Banner
-from modules.Request import Request
+# pyscrap.core
 from core.colors import *
-# pyscrap.scrap
+from core.output import *
+from core.Logger import *
+from core.parser import parser
+from core.Banner import Banner
+# pyscrap.modules
+from modules.Request import Request
 from modules.Scrap import *
 from modules.Email import *
 
@@ -37,12 +38,11 @@ class PyScrap:
         self.log = kwargs.pop('log', False)
 
     def main(self):
-        Banner().banner()
-
         scrap = Scrap(self.url)
         links = scrap.return_links()
 
         if self.emails:
+            info("Found %s pages" % (len(links)))
             email = Email(links)
             output_emails(email._return_emails_list())
         if self.phones:
@@ -52,6 +52,7 @@ class PyScrap:
 
 if __name__ == '__main__':
     try:
+        Banner().banner()
         args = parser()
         PyScrap(args.url, email=args.email, phone=args.phone, address=args.address, logs=args.log).main()
     except KeyboardInterrupt as e:

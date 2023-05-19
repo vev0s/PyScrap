@@ -15,12 +15,12 @@ class Email:
         self.email_list = []
         self.links = links
 
-        Logger().success("Fetching emails")
+        test("Searching for emails...")
         self._parse()
 
     def _parse(self):
         for i in self.links:
-            #Logger().log_task("Looking for emails in %s" % i)
+            #Logger().task("Looking for emails in %s" % i)
             content = Request(i).get_content()
             if content == "error":
                 continue
@@ -29,7 +29,7 @@ class Email:
             for i in mails:
                 if i not in self.email_list:
                     self.email_list.append(i)
-        Logger().success("Successfully fetched emails")
+        info("Found %s emails" % len(self.email_list))
 
     def _find_emails(self, soup):
         m = re.findall(r'[\w\.-]+@[\w\.-]+\.\w+', str(soup))

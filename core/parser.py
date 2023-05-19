@@ -14,6 +14,7 @@ def parser():
     argParser.add_argument("-e", "--email", action="store_true", help="scrap e-mails")
     argParser.add_argument("-p", "--phone", action="store_true", help="scrap phone numbers")
     argParser.add_argument("-a", "--address", action="store_true", help="scrap address")
+    argParser.add_argument("-f", "--filter", action="store_true", help="filter results based on wordlists")
     argParser.add_argument("-l", "--log", action="store_true", help="show logs")
 
     return argParser.parse_args()

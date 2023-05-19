@@ -23,7 +23,7 @@ class Scrap:
         self.netloc = o.netloc
         self.scheme = o.scheme
         
-        Logger().success("Fetching pages")
+        test("Searching for links...")
         self.get_all_pages(self.url)
         #Logger().task("Fetching pages from %s" % self.url)
 

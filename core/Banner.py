@@ -9,7 +9,7 @@ from core.colors import *
 
 class Banner:
 	def banner(self):
-		print("_"*40)
+		print("\n" + "_"*40)
 		print("-==[ PyScrap - Email & Phone Scrapper ")
 		print("-==[ Paul (vev0s) Lecomte ")
 		print("-==[ %shttps://github.com/vev0s%s "%(Y%0,E))
