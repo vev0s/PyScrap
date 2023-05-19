@@ -8,10 +8,10 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 import re
-from scrap.email import *
-from lib.request import *
-from lib.colors import *
-from lib.log import *
+from modules.Email import *
+from modules.Request import *
+from core.colors import *
+from core.Logger import *
 
 class Scrap:
     def __init__(self, url) -> None:

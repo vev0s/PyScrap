@@ -7,14 +7,14 @@
 
 import sys
 # pyscrap.lib
-from lib.parser import parser
-from lib.output import *
-from lib.banner import Banner
-from lib.request import Request
-from lib.colors import *
+from core.parser import parser
+from core.output import *
+from core.Banner import Banner
+from modules.Request import Request
+from core.colors import *
 # pyscrap.scrap
-from scrap.scrap import *
-from scrap.email import *
+from modules.Scrap import *
+from modules.Email import *
 
 class PyScrap:
     """PyScrap"""

@@ -7,8 +7,8 @@
 
 from bs4 import BeautifulSoup
 import re
-from lib.request import *
-from lib.log import *
+from modules.Request import *
+from core.Logger import *
 
 class Email:
     def __init__(self, links) -> None:
