@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+PyScrap.egg-info/PKG-INFO
+PyScrap.egg-info/SOURCES.txt
+PyScrap.egg-info/dependency_links.txt
+PyScrap.egg-info/requires.txt
+PyScrap.egg-info/top_level.txt
