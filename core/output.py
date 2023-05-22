@@ -22,8 +22,13 @@ def info(string):
 
 def output_emails(emails):
     Banner().banner()
+    f = open("wordlists/output.txt", "a")
     for i in emails:
+        f.write("%s\n" % i)
         plus(i)
+    f.close()
+    print("---------------------------")
+    info("Logged all emails into /wordlist/output.txt")
 
 def output_progress(str):
     pass

@@ -8,8 +8,10 @@
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
 import re
+# pyscrap.modules
 from modules.Email import *
 from modules.Request import *
+# pyscrap.core
 from core.colors import *
 from core.Logger import *
 
@@ -23,9 +25,8 @@ class Scrap:
         self.netloc = o.netloc
         self.scheme = o.scheme
         
-        test("Searching for links...")
+        test("Looking for links...")
         self.get_all_pages(self.url)
-        #Logger().task("Fetching pages from %s" % self.url)
 
     def _return_page_content(self, url):
         o = urlparse(url)
@@ -53,7 +54,7 @@ class Scrap:
             exit(warn("%sERROR:%s %s (_return_page_links)" % (R%0, E, e)))
     
     def get_all_pages(self, url):
-        #Logger().task("Scrapping from %s" % url)
+        Logger().task("Scrapping from %s" % url)
         content = str(self._return_page_content(url))
         links = self._return_page_links(content)
         for i in links:

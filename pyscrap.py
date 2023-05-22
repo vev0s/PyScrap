@@ -5,7 +5,7 @@
 # @url    : http://github.com/vev0s
 # @author : Paul Lecomte (vev0s)
 
-import sys
+import sys, time
 # pyscrap.core
 from core.colors import *
 from core.output import *
@@ -38,17 +38,19 @@ class PyScrap:
         self.log = kwargs.pop('log', False)
 
     def main(self):
+        s_time = time.time()
         scrap = Scrap(self.url)
         links = scrap.return_links()
 
         if self.emails:
-            info("Found %s pages" % (len(links)))
+            info("Found %s pages \n---------------------------" % (len(links)))
             email = Email(links)
             output_emails(email._return_emails_list())
         if self.phones:
             pass
         if self.address:
             pass
+        info("Scrapped URL in %s seconds" % (round(time.time() - s_time)))
 
 if __name__ == '__main__':
     try:

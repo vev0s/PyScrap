@@ -15,7 +15,7 @@ class Email:
         self.email_list = []
         self.links = links
 
-        test("Searching for emails...")
+        test("Looking for emails...")
         self._parse()
 
     def _parse(self):

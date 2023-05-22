@@ -8,7 +8,7 @@
 from core.colors import *
 
 class Logger(object):
-    
+    """Note: this is an object class, you can call it by Logger().function(params)"""
     def success(self, str):
         print("%s[+] %s%s"%(G%0, str, E))
 
