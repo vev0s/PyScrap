@@ -37,3 +37,24 @@ class Email:
     
     def _return_emails_list(self):
         return self.email_list
+
+class Email2:
+    def __init__(self) -> None:
+        self.email_list = []
+
+        test("Looking for emails...")
+        self._parse()
+
+    def email(self, content):
+        soup = BeautifulSoup(content, "html.parser")
+        m = re.findall(r'[\w\.-]+@[\w\.-]+\.\w+', str(soup))
+        for i in m:
+            if i not in self.email_list:
+                self.email_list.append(i)
+
+    def _find_emails(self, soup):
+        m = re.findall(r'[\w\.-]+@[\w\.-]+\.\w+', str(soup))
+        return m
+    
+    def _return_emails_list(self):
+        return self.email_list

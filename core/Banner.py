@@ -5,6 +5,7 @@
 # @url    : http://github.com/vev0s
 # @author : Paul Lecomte (vev0s)
 
+import os
 from core.colors import *
 
 class Banner:

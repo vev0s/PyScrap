@@ -20,9 +20,10 @@ def test(string):
 def info(string):
     print("%s[i]%s %s"%(Y%0, E, string))
 
-def output_emails(emails):
+def output_emails(emails, site):
     Banner().banner()
     f = open("wordlists/output.txt", "a")
+    f.write("########## %s ##########")
     for i in emails:
         f.write("%s\n" % i)
         plus(i)

@@ -5,7 +5,7 @@
 # @url    : http://github.com/vev0s
 # @author : Paul Lecomte (vev0s)
 
-import sys, time
+import sys, time, os
 # pyscrap.core
 from core.colors import *
 from core.output import *
@@ -45,7 +45,7 @@ class PyScrap:
         if self.emails:
             info("Found %s pages \n---------------------------" % (len(links)))
             email = Email(links)
-            output_emails(email._return_emails_list())
+            output_emails(email._return_emails_list(), self.url)
         if self.phones:
             pass
         if self.address:
@@ -54,6 +54,7 @@ class PyScrap:
 
 if __name__ == '__main__':
     try:
+        os.system('clear')
         Banner().banner()
         args = parser()
         PyScrap(args.url, email=args.email, phone=args.phone, address=args.address, logs=args.log).main()
